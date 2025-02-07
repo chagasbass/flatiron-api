@@ -44,6 +44,6 @@ global using Flatiron.Extensions.Shared.Configurations;
 global using Flatiron.Extensions.Shared.Enums;
 global using Flatiron.Extensions.Shared.Extensions;
 global using Flatiron.Extensions.Shared.Helpers;
-global using Flatiron.Extensions.Shared.Logs;
-global using Flatiron.Extensions.Shared.Logs.Services;
+global using Flatiron.Extensions.Shared.CustomsLogs;
+global using Flatiron.Extensions.Shared.CustomsLogs.Services;
 global using Flatiron.Extensions.Shared.Notifications;
