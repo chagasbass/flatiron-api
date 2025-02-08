@@ -61,7 +61,7 @@ public class ApiCustomResults(ILogServices logServices,
     {
         var notifications = notificationServices.GetNotifications();
 
-        var defaultTitle = "Um erro ocorreu ao processar o request.";
+        var defaultTitle = "An error ocurried on request proccessing.";
 
         var problemDetails = new MinimalApiProblemDetail(notifications.ToList(), commandResult.Message, statusCode, defaultTitle);
 

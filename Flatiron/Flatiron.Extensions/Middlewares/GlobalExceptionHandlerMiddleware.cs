@@ -37,8 +37,8 @@ public sealed class GlobalExceptionHandlerMiddleware(IOptions<ProblemDetailConfi
 
     private ProblemDetails ConfigureProblemDetails(int statusCode, HttpContext context)
     {
-        var defaultTitle = $"Um erro ocorreu ao processar o request às {DateTimeExtensions.GetGmtDateTime(DateTime.UtcNow)}";
-        var defaultDetail = $"Erro fatal na aplicação,entre em contato com um Desenvolvedor responsável.";
+        var defaultTitle = $"An error ocurried when request was processed at {DateTimeExtensions.GetGmtDateTime(DateTime.UtcNow)}";
+        var defaultDetail = $"Fatal Error on aplication contact a Developer";
 
         var title = problemOptions.Value.Title;
         var detail = problemOptions.Value.Detail;

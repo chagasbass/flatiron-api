@@ -1,3 +1,6 @@
+using Flatiron.API.BackgroundServices;
+using Flatiron.Extensions.EndpointModules;
+
 var builder = WebApplication.CreateBuilder(args);
 
 Log.Logger = LogIntegrationsExtensions.ConfigureStructuralLogWithSerilog();
@@ -17,8 +20,11 @@ try
                     .AddApiCustomResults()
                     .AddGlobalExceptionHandlerMiddleware()
                     .AddFilterToSystemLogs()
+                    .AddEndpointModuleExtensions()
                     .AddMinimalApiVersionsing()
                     .AddAppHealthChecks();
+
+    builder.Services.AddHostedService<FileProcessingWorker>();
 
     var app = builder.Build();
 
@@ -34,9 +40,7 @@ try
     app.UseHealthChecksMiddleware(configuration);
 
     #endregion
-
-    app.AddWeatherV1Endpoints();
-
+    app.MapEndpointModules();
     app.Run();
 }
 catch (Exception ex)

@@ -9,7 +9,7 @@ FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 COPY ["Flatiron.csproj", "."]
 COPY ["Flatiron.Tests.csproj", "Flatiron.Tests/"]
-COPY ["RestoqueMinimal.Extensions.csproj", "RestoqueMinimal.Extensions/"]
+COPY ["Flatiron.Extensions.csproj", "Flatiron.Extensions/"]
 RUN dotnet restore "./Flatiron.csproj"
 COPY . .
 WORKDIR "/src/."

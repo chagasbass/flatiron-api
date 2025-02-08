@@ -7,6 +7,7 @@ public class BaseConfigurationOptions
     public string? Description { get; set; }
     public string? Developer { get; set; }
     public string? DataBaseConnectionString { get; set; }
+    public string? ConcurrencyUrlService { get; set; }
 
     public BaseConfigurationOptions() { }
 

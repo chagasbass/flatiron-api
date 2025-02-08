@@ -23,7 +23,7 @@ public static class HealthReportExtensions
                     Name = entrie.Key,
                     Description = entrie.Value.Description,
                     Status = entrie.Value.Status.ToString(),
-                    MemoriaAlocada = GCInfoOptions.AllocatedMemory,
+                    AllocatedMemory = GCInfoOptions.AllocatedMemory,
                     TotalAvailableMemory = GCInfoOptions.TotalAvailableMemory,
                     MaxMemory = GCInfoOptions.MaxMemory,
                     OperationalSystem = GCInfoOptions.OperationalSystem,

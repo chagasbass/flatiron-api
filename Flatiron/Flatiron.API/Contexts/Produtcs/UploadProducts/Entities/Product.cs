@@ -3,14 +3,48 @@ using Flunt.Validations;
 
 namespace Flatiron.API.Contexts.Produtcs.UploadProducts.Entities;
 
-public class Product(string? name, decimal? price, DateTime? expiration) : BaseEntity
+public class Product : BaseEntity
 {
-    public string? Name { get; set; } = name;
-    public decimal? Price { get; set; } = price;
-    public DateTime? Expiration { get; set; } = expiration;
+    public Guid Id { get; set; } = Guid.NewGuid();
+    public string? Name { get; set; }
+    public decimal? Price { get; set; }
+    public DateTime? Expiration { get; set; }
+    public List<Concurrency> Concurrencies { get; set; } = [];
+
+    public Product(string? name, decimal? price, DateTime? expiration)
+    {
+        Name = name;
+        Price = price;
+        Expiration = expiration;
+
+        Validate();
+    }
+
+    public void AddConcurrencies(List<Concurrency> concurrencies) => Concurrencies = concurrencies;
 
     public override void Validate()
     {
+        decimal numericalPrice = 0;
+
+        //if (string.IsNullOrEmpty(price))
+        //{
+        //    var newPrice = price.Replace("$", "");
+        //    var hasPrice = Decimal.TryParse(newPrice, out numericalPrice);
+
+        //    if (hasPrice)
+        //    {
+        //        Price = numericalPrice;
+        //    }
+        //    else
+        //    {
+        //        AddNotification(new Notification(nameof(Price), "The price is invalid"));
+        //    }
+        //}
+        //else
+        //{
+        //    AddNotification(new Notification(nameof(Price), "The price is invalid"));
+        //}
+
         AddNotifications(new Contract<Notification>()
             .Requires()
             .IsNotNullOrEmpty(Name, nameof(Name), "The name is required.")
@@ -20,18 +54,14 @@ public class Product(string? name, decimal? price, DateTime? expiration) : BaseE
     }
 }
 
-public static class ProductFactory
+public class Concurrency
 {
-    public static Product CreateNewProduct(string? name, string? price, DateTime? expiration)
+    public Guid Id { get; set; }
+    public string? Name { get; set; }
+    public decimal? Value { get; set; }
+
+    public Concurrency()
     {
-        decimal newPrice = 0;
-
-        if (string.IsNullOrEmpty(price))
-        {
-            newPrice = decimal.Parse(price.Replace("$", ""));
-        }
-
-        return new Product(name, newPrice, expiration);
-
+        Id = Guid.NewGuid();
     }
 }
