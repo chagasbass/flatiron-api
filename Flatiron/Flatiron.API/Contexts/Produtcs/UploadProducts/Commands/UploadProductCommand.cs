@@ -5,14 +5,10 @@ namespace Flatiron.API.Contexts.Produtcs.UploadProducts.Commands;
 
 public class UploadProductCommand : Notifiable<Notification>, IRequest<ICommandResult>
 {
-    string? FileKey { get; set; }
     MemoryStream? FileStream { get; set; }
     public IFormFile? File { get; set; }
 
-
     public UploadProductCommand() { }
-
-    public string? GetFileKey() => FileKey;
 
     public MemoryStream? GetStream() => FileStream;
 
@@ -39,10 +35,6 @@ public class UploadProductCommand : Notifiable<Notification>, IRequest<ICommandR
         if (!validFileExtensions.Contains(fileExtension))
         {
             AddNotification(new Notification("file-upload", "Invalid File Extension.Only .xls , .xlsx or .csv are allowed."));
-        }
-        else
-        {
-            FileKey = $"{File.FileName}-{Guid.NewGuid()}";
         }
     }
 }

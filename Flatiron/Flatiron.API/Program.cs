@@ -1,6 +1,3 @@
-using Flatiron.API.BackgroundServices;
-using Flatiron.Extensions.EndpointModules;
-
 var builder = WebApplication.CreateBuilder(args);
 
 Log.Logger = LogIntegrationsExtensions.ConfigureStructuralLogWithSerilog();
@@ -22,11 +19,15 @@ try
                     .AddFilterToSystemLogs()
                     .AddEndpointModuleExtensions()
                     .AddMinimalApiVersionsing()
-                    .AddAppHealthChecks();
+                    .AddAppHealthChecks()
+                    .AddMemoryCache();
 
     builder.Services.AddHostedService<FileProcessingWorker>();
 
     var app = builder.Build();
+
+    //initializing database
+    DatabaseInitializeExtensions.AddDatabaseInitialer(configuration);
 
     #region Middleware Configurations
 

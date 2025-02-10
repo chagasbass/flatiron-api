@@ -1,8 +1,4 @@
-﻿
-using Flatiron.API.Contexts.Produtcs.UploadProducts.DomainServices;
-using Flatiron.Extensions.Shared.CustomsLogs.Services;
-
-namespace Flatiron.API.BackgroundServices;
+﻿namespace Flatiron.API.BackgroundServices;
 
 public class FileProcessingWorker(ILogServices logServices,
                                   IFileProcessDomainServices fileProcessDomainServices) : BackgroundService
@@ -13,7 +9,7 @@ public class FileProcessingWorker(ILogServices logServices,
         {
             try
             {
-                await fileProcessDomainServices.ProcessFilesAsync(stoppingToken);
+                await fileProcessDomainServices.ProcessFilesAsync(logServices, stoppingToken);
             }
             catch (Exception ex)
             {

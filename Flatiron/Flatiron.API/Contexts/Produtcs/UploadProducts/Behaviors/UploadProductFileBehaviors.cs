@@ -1,14 +1,7 @@
-﻿using Flatiron.API.Contexts.Produtcs.UploadProducts.Commands;
-using Flatiron.API.Contexts.Produtcs.UploadProducts.DomainServices;
-using Flatiron.Extensions.Shared.CustomsLogs.Services;
-using Flunt.Notifications;
-using MediatR;
-
-namespace Flatiron.API.Contexts.Produtcs.UploadProducts.Behaviors;
+﻿namespace Flatiron.API.Contexts.Produtcs.UploadProducts.Behaviors;
 
 public class UploadProductFileBehaviors<TRequest, TResponse>(ILogServices logServices,
-                                                             INotificationServices notificationServices,
-                                                             IFileValidatorDomainServices fileValidatorDomainServices)
+                                                             INotificationServices notificationServices)
 : IPipelineBehavior<TRequest, TResponse> where TRequest : IRequest<TResponse>
                                      where TResponse : ICommandResult
 {
@@ -16,7 +9,7 @@ public class UploadProductFileBehaviors<TRequest, TResponse>(ILogServices logSer
     {
         UploadProductCommand uploadProductCommand = request as UploadProductCommand;
 
-        logServices.WriteMessage("validating incoming  file");
+        logServices.WriteMessage("Validating incoming file...");
 
         if (uploadProductCommand is null)
         {
@@ -34,17 +27,17 @@ public class UploadProductFileBehaviors<TRequest, TResponse>(ILogServices logSer
             return await Task.FromResult(response);
         }
 
-        fileValidatorDomainServices.ValidateUploadFileAsync(uploadProductCommand);
+        uploadProductCommand.Validate();
 
-        if (notificationServices.HasNotifications())
+        if (!uploadProductCommand.IsValid)
         {
-            notificationServices.AddStatusCode(StatusCodeOperation.BusinessError);
+            notificationServices.AddNotifications(uploadProductCommand.Notifications, StatusCodeOperation.BusinessError);
 
             var commandResult = new CommandResult()
             {
                 Data = uploadProductCommand.Notifications.ToList(),
                 Success = false,
-                Message = "Verify your uploaded file."
+                Message = "Please,verify your uploaded file."
             };
 
             var response = (TResponse)(object)commandResult;
@@ -53,6 +46,5 @@ public class UploadProductFileBehaviors<TRequest, TResponse>(ILogServices logSer
         }
 
         return await next();
-
     }
 }

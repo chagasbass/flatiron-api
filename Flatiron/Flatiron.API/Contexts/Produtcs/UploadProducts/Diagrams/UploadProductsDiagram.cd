@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Flatiron.API.Contexts.Produtcs.UploadProducts.Handlers.UploadProductHandler">
+    <Position X="2.75" Y="4.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Contexts\Produtcs\UploadProducts\Handlers\UploadProductHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Flatiron.API.Contexts.Produtcs.UploadProducts.Behaviors.UploadProductFileBehaviors&lt;TRequest, TResponse&gt;">
+    <Position X="2.75" Y="3.25" Width="5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Contexts\Produtcs\UploadProducts\Behaviors\UploadProductFileBehaviors.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Flatiron.API.Contexts.Produtcs.UploadProducts.Commands.UploadProductCommand">
+    <Position X="3" Y="0.5" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAIAAAAAAEAAAAIAAAAAIAAAA=</HashCode>
+      <FileName>Contexts\Produtcs\UploadProducts\Commands\UploadProductCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Flatiron.API.Contexts.Produtcs.UploadProducts.DomainServices.FileProcessDomainServices">
+    <Position X="5.5" Y="6.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Contexts\Produtcs\UploadProducts\DomainServices\FileProcessDomainServices.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Flatiron.API.Contexts.Produtcs.UploadProducts.DomainServices.FileReaderDomainServices">
+    <Position X="5.5" Y="8" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contexts\Produtcs\UploadProducts\DomainServices\FileReaderDomainServices.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Flatiron.API.Contexts.Produtcs.UploadProducts.DomainServices.CurrencyDomainServices">
+    <Position X="5.25" Y="9.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Contexts\Produtcs\UploadProducts\DomainServices\CurrencyDomainServices.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Flatiron.API.Contexts.Produtcs.UploadProducts.Entities.Currency">
+    <Position X="1.5" Y="11.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAgAAAAAAIAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contexts\Produtcs\UploadProducts\Entities\Currency.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Flatiron.API.Contexts.Produtcs.UploadProducts.Entities.Product">
+    <Position X="5" Y="11.25" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AIAjAAAAAQCAgAAAAAAAAAQAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Contexts\Produtcs\UploadProducts\Entities\Product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Flatiron.API.Contexts.Produtcs.UploadProducts.QueryHelpers.ProductQueryHelpers">
+    <Position X="1.5" Y="14.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAIAAAAAQAIAAEAgAAAAAQAAAAAEAgAAAA=</HashCode>
+      <FileName>Contexts\Produtcs\UploadProducts\QueryHelpers\ProductQueryHelpers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Flatiron.API.Contexts.Produtcs.UploadProducts.Repositories.ProductRepository">
+    <Position X="5.5" Y="17" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAQAAAAAAAAAAAAAAAAAAAIAAAIAAAAAAAAA=</HashCode>
+      <FileName>Contexts\Produtcs\UploadProducts\Repositories\ProductRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Flatiron.API.Contexts.Produtcs.UploadProducts.DomainServices.IFileReaderDomainServices">
+    <Position X="0.75" Y="8" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contexts\Produtcs\UploadProducts\DomainServices\IFileReaderDomainServices.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Flatiron.API.Contexts.Produtcs.UploadProducts.DomainServices.ICurrencyDomainServices">
+    <Position X="0.75" Y="9.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Contexts\Produtcs\UploadProducts\DomainServices\IConcurrencyDomainServices.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Flatiron.API.Contexts.Produtcs.UploadProducts.DomainServices.IFileProcessDomainServices">
+    <Position X="0.75" Y="6.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Contexts\Produtcs\UploadProducts\DomainServices\IFileProcessDomainServices.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Flatiron.API.Contexts.Produtcs.UploadProducts.Repositories.IProductRepository">
+    <Position X="5.5" Y="14.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAQAAAAAAAAAAAAAAAAAAAIAAAIAAAAAAAAA=</HashCode>
+      <FileName>Contexts\Produtcs\UploadProducts\Repositories\IProductRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

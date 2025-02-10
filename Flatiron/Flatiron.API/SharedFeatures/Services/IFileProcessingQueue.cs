@@ -1,6 +1,4 @@
-﻿using Flatiron.API.Contexts.Produtcs.UploadProducts.Commands;
-
-namespace Flatiron.API.SharedFeatures.Services;
+﻿namespace Flatiron.API.SharedFeatures.Services;
 
 public interface IFileProcessingQueue
 {

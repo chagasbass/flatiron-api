@@ -53,7 +53,7 @@ public class LogData
         if (requestData is null)
             RequestData = "No Request Data";
         else
-            RequestData = requestData;
+            RequestData = JsonSerializer.Serialize(requestData);
 
         return this;
     }
@@ -63,7 +63,7 @@ public class LogData
         if (string.IsNullOrEmpty(requestData))
             RequestData = "No Request Data";
         else
-            RequestData = requestData;
+            RequestData = JsonSerializer.Serialize(requestData);
 
         return this;
     }

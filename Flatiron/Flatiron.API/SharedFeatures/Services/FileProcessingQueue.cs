@@ -1,7 +1,4 @@
-﻿using Flatiron.API.Contexts.Produtcs.UploadProducts.Commands;
-using System.Threading.Channels;
-
-namespace Flatiron.API.SharedFeatures.Services;
+﻿namespace Flatiron.API.SharedFeatures.Services;
 
 public class FileProcessingQueue(Channel<List<UploadProductCommand>> queue) : IFileProcessingQueue
 {

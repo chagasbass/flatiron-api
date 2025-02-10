@@ -1,8 +1,4 @@
-﻿using Flatiron.API.Contexts.Produtcs.UploadProducts.Commands;
-using Flatiron.API.SharedFeatures.Services;
-using MediatR;
-
-namespace Flatiron.API.Contexts.Produtcs.UploadProducts.Handlers;
+﻿namespace Flatiron.API.Contexts.Produtcs.UploadProducts.Handlers;
 
 public class UploadProductHandler(INotificationServices notificationServices,
                                   IFileProcessingQueue fileProcessingQueue) : IRequestHandler<UploadProductCommand, ICommandResult>

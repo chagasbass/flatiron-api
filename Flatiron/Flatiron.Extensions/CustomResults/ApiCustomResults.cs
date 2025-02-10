@@ -38,13 +38,11 @@ public class ApiCustomResults(ILogServices logServices,
                 GenerateLogResponse(commandResult, (int)HttpStatusCode.NoContent);
                 return Results.NoContent();
             case var _ when statusCodeOperation == StatusCodeOperation.OK:
-                GenerateLogResponse(commandResult, (int)HttpStatusCode.OK);
                 return Results.Ok(commandResult);
             case var _ when statusCodeOperation == StatusCodeOperation.Accepted:
                 GenerateLogResponse(commandResult, (int)HttpStatusCode.Accepted);
                 return Results.Ok(commandResult);
             default:
-                GenerateLogResponse(commandResult, (int)HttpStatusCode.OK);
                 return Results.Ok(commandResult);
         }
     }
